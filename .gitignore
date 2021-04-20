@@ -1,0 +1,11 @@
+.vscode/
+.DS_Store
+node_modules/
+/*.env
+build
+/target
+node_modules
+
+#Hardhat files
+cache
+artifacts
