@@ -6,6 +6,7 @@ module.exports = {
     path: path.join(__dirname, "dist"),
     filename: "build.js", // The final file will be created in dist/build.js
   },
+  mode: "development",
   module: {
     rules: [
       {
