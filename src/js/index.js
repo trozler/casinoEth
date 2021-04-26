@@ -26,15 +26,6 @@ class App extends React.Component {
 
     const MyContract = this.web3.eth.contract([
       {
-        constant: false,
-        inputs: [],
-        name: "generateNumberWinner",
-        outputs: [],
-        payable: false,
-        stateMutability: "nonpayable",
-        type: "function",
-      },
-      {
         constant: true,
         inputs: [],
         name: "numberOfBets",
@@ -46,34 +37,6 @@ class App extends React.Component {
         ],
         payable: false,
         stateMutability: "view",
-        type: "function",
-      },
-      {
-        constant: true,
-        inputs: [
-          {
-            name: "player",
-            type: "address",
-          },
-        ],
-        name: "checkPlayerExists",
-        outputs: [
-          {
-            name: "",
-            type: "bool",
-          },
-        ],
-        payable: false,
-        stateMutability: "view",
-        type: "function",
-      },
-      {
-        constant: false,
-        inputs: [],
-        name: "kill",
-        outputs: [],
-        payable: false,
-        stateMutability: "nonpayable",
         type: "function",
       },
       {
@@ -97,34 +60,6 @@ class App extends React.Component {
         ],
         payable: false,
         stateMutability: "view",
-        type: "function",
-      },
-      {
-        constant: false,
-        inputs: [
-          {
-            name: "numberWinner",
-            type: "uint256",
-          },
-        ],
-        name: "distributePrizes",
-        outputs: [],
-        payable: false,
-        stateMutability: "nonpayable",
-        type: "function",
-      },
-      {
-        constant: false,
-        inputs: [
-          {
-            name: "numberSelected",
-            type: "uint256",
-          },
-        ],
-        name: "bet",
-        outputs: [],
-        payable: true,
-        stateMutability: "payable",
         type: "function",
       },
       {
@@ -217,6 +152,71 @@ class App extends React.Component {
         payable: true,
         stateMutability: "payable",
         type: "fallback",
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: "kill",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: "player",
+            type: "address",
+          },
+        ],
+        name: "checkPlayerExists",
+        outputs: [
+          {
+            name: "",
+            type: "bool",
+          },
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: "numberSelected",
+            type: "uint256",
+          },
+        ],
+        name: "bet",
+        outputs: [],
+        payable: true,
+        stateMutability: "payable",
+        type: "function",
+      },
+      {
+        constant: false,
+        inputs: [],
+        name: "generateNumberWinner",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: "numberWinner",
+            type: "uint256",
+          },
+        ],
+        name: "distributePrizes",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function",
       },
     ]);
     this.state.ContractInstance = MyContract.at("0x81747f65dd64D2266cbFE5e1caB750c38c37841a");

@@ -1,4 +1,4 @@
-pragma solidity 0.4.20;
+pragma solidity ^0.4.20;
 
 contract Casino {
     address public owner;
@@ -13,8 +13,6 @@ contract Casino {
     }
     // The address of the player and => the user info
     mapping(address => Player) public playerInfo;
-
-    function() public payable {}
 
     function Casino(uint256 _minimumBet) public {
         owner = msg.sender;
